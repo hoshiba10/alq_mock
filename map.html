@@ -1,0 +1,27 @@
+<html>
+<head>
+<!-- metaはなくてもよい（ユーザによってリサイズされるべきではないということ） -->
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+</head>
+<body>
+  <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=set_to_true_or_false"></script>
+  <script type="text/javascript">
+    function initialize() {
+      //以下の７行で表示したいエリアを表示
+      var latlng = new google.maps.LatLng(37.509061, 139.930025);
+      var myOptions = {
+        zoom: 17,
+        center: latlng,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      };
+      var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+
+      //以下の２行でマーカをつける
+      var m_latlng1 = new google.maps.LatLng(37.509852, 139.933319);
+      var marker1 = new google.maps.Marker({ position: m_latlng1, map: map});
+    }
+  window.onload = initialize;
+  </script>
+  <div id="map_canvas" style="width:100%; height:100%"></div>
+</body>
+</html>

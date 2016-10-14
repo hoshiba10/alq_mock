@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="index.js"></script>
+    <title>Flat UI Pro 101 Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Loading Bootstrap -->
+    <link href="ui/flat-ui-pro-1.3.2/dist/css/vendor/bootstrap.min.css" rel="stylesheet">
+    <!-- Loading Flat UI Pro -->
+    <link href="ui/flat-ui-pro-1.3.2/dist/css/flat-ui-pro.css" rel="stylesheet">
+    <link rel="shortcut icon" href="img/favicon.ico">
+
+  </head>
+  <body>
+    <!-- jQuery (necessary for Flat UI's JavaScript plugins) -->
+    <script src="ui/flat-ui-pro-1.3.2/dist/js/vendor/jquery.min.js"></script>
+    <script src="ui/flat-ui-pro-1.3.2/dist/js/vendor/video.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="ui/flat-ui-pro-1.3.2/dist/js/flat-ui-pro.js"></script>
+
+
+<button type="button" class="btn btn-lg btn-danger" data-toggle="popover" title="お知らせ一覧" data-content='
+  <div class="table-responsive">
+    <table class="table table-bordered">
+      <ul class="nav nav-list">
+        <li class="nav-header">会津若松</li>
+        <li>
+          <a href="#">
+            鶴ヶ城
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            会津大学
+          </a>
+        </li>
+        <li class="nav-header">喜多方</li>
+        <li>
+          <a href="#">
+            ラーメン屋
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+'>
+  <div class="fui-mail"></div></button>
+
+
+<script>
+$(function () {
+  $('[data-toggle="popover"]').popover({html:true})
+});
+
+</script>
+
+<div id="area"></div>
+
+<script>
+var map = new google.maps.LatLng(34.47, 136.58);
+var mapOptions = {
+center: map,
+zoom: 14,
+mapTypeId: google.maps.MapTypeId.ROADMAP
+};
+var map_area = new google.maps.Map(document.getElementById("area"), mapOptions);
+var markerSanchi = {
+position:map_area.getCenter(),
+map: map_area
+};
+var marker_area = new google.maps.Marker(markerSanchi);
+</script>
+
+  </body>
+</html>
